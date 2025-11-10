@@ -1,9 +1,10 @@
 import { useState } from 'react';
 
-function Square({ value }) {
+function Square() {
   const [value, setValue] = useState(null);
+
   function handleClick() {
-    console.log('clicked!');
+    setValue('X');
   }
 
   return (
@@ -17,6 +18,7 @@ function Square({ value }) {
 }
 
 export default function Board() {
+  const [squares, setSquares] = useState(Array(9).fill(null));
   return (
     <>
       <div className="board-row">
@@ -37,5 +39,3 @@ export default function Board() {
     </>
   );
 }
-
-
